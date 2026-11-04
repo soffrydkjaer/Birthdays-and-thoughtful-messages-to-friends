@@ -1,0 +1,355 @@
+{
+  "contacts": [
+    {
+      "id": "mor",
+      "name": "Mor",
+      "group": "familie",
+      "relation": "mor",
+      "birthday": "07-23",
+      "marked": false,
+      "notes": ""
+    },
+    {
+      "id": "far",
+      "name": "Far",
+      "group": "familie",
+      "relation": "far",
+      "birthday": "11-13",
+      "marked": false,
+      "notes": ""
+    },
+    {
+      "id": "alberte-niece",
+      "name": "Alberte",
+      "group": "familie",
+      "relation": "niece (Lines datter)",
+      "birthday": "11-01",
+      "marked": false,
+      "notes": ""
+    },
+    {
+      "id": "karl",
+      "name": "Karl",
+      "group": "familie",
+      "relation": null,
+      "birthday": "04-15",
+      "marked": false,
+      "notes": ""
+    },
+    {
+      "id": "morfar",
+      "name": "Morfar",
+      "group": "familie",
+      "relation": "morfar",
+      "birthday": null,
+      "marked": false,
+      "notes": ""
+    },
+    {
+      "id": "erna",
+      "name": "Erna",
+      "group": "familie",
+      "relation": null,
+      "birthday": "01-02",
+      "marked": false,
+      "notes": ""
+    },
+    {
+      "id": "line",
+      "name": "Line",
+      "group": "familie",
+      "relation": "søster",
+      "birthday": "01-07",
+      "marked": false,
+      "notes": ""
+    },
+    {
+      "id": "anker",
+      "name": "Anker",
+      "group": "familie",
+      "relation": "bror",
+      "birthday": "01-22",
+      "marked": false,
+      "notes": ""
+    },
+    {
+      "id": "markus",
+      "name": "Markus",
+      "group": "familie",
+      "relation": "bror",
+      "birthday": "10-09",
+      "marked": false,
+      "notes": ""
+    },
+    {
+      "id": "rikke-jensen",
+      "name": "Rikke Jensen",
+      "group": "venner",
+      "relation": null,
+      "birthday": "02-28",
+      "marked": true,
+      "notes": ""
+    },
+    {
+      "id": "jessica-ryvang",
+      "name": "Jessica Ryvang",
+      "group": "venner",
+      "relation": null,
+      "birthday": "10-09",
+      "marked": true,
+      "notes": ""
+    },
+    {
+      "id": "kathrine-oestergaard-inman",
+      "name": "Kathrine Østergaard Inman",
+      "group": "venner",
+      "relation": null,
+      "birthday": "08-19",
+      "marked": true,
+      "notes": ""
+    },
+    {
+      "id": "louise-gottlieb",
+      "name": "Louise Gottlieb",
+      "group": "venner",
+      "relation": null,
+      "birthday": "02-09",
+      "marked": true,
+      "notes": ""
+    },
+    {
+      "id": "christine-morild",
+      "name": "Christine Morild",
+      "group": "venner",
+      "relation": null,
+      "birthday": "09-24",
+      "marked": true,
+      "notes": ""
+    },
+    {
+      "id": "nadja-kirkedal",
+      "name": "Nadja Kirkedal",
+      "group": "venner",
+      "relation": null,
+      "birthday": "07-14",
+      "marked": false,
+      "notes": ""
+    },
+    {
+      "id": "pernille-jensen-larsen",
+      "name": "Pernille Jensen Larsen",
+      "group": "venner",
+      "relation": null,
+      "birthday": "08-08",
+      "marked": false,
+      "notes": ""
+    },
+    {
+      "id": "alberte-frederiksen",
+      "name": "Alberte Frederiksen",
+      "group": "venner",
+      "relation": null,
+      "birthday": "09-24",
+      "marked": false,
+      "notes": ""
+    },
+    {
+      "id": "signe-eriksen",
+      "name": "Signe Eriksen",
+      "group": "venner",
+      "relation": null,
+      "birthday": "03-08",
+      "marked": true,
+      "notes": ""
+    },
+    {
+      "id": "camilla-maach",
+      "name": "Camilla Maach",
+      "group": "venner",
+      "relation": null,
+      "birthday": "04-03",
+      "marked": true,
+      "notes": ""
+    },
+    {
+      "id": "ane-andreasen",
+      "name": "Ane Andreasen",
+      "group": "venner",
+      "relation": null,
+      "birthday": "06-28",
+      "marked": false,
+      "notes": ""
+    },
+    {
+      "id": "laura-topholt",
+      "name": "Laura Topholt",
+      "group": "venner",
+      "relation": null,
+      "birthday": "03-02",
+      "marked": false,
+      "notes": ""
+    },
+    {
+      "id": "emilie-luna-rasmussen",
+      "name": "Emilie Luna Rasmussen",
+      "group": "venner",
+      "relation": null,
+      "birthday": "10-15",
+      "marked": true,
+      "notes": ""
+    },
+    {
+      "id": "eline-gernow",
+      "name": "Eline Gernow",
+      "group": "venner",
+      "relation": null,
+      "birthday": "02-15",
+      "marked": true,
+      "notes": ""
+    },
+    {
+      "id": "julia-lamamy",
+      "name": "Julia Lamamy",
+      "group": "venner",
+      "relation": null,
+      "birthday": "10-18",
+      "marked": false,
+      "notes": ""
+    },
+    {
+      "id": "emma-hassinggaard",
+      "name": "Emma Hassinggaard",
+      "group": "venner",
+      "relation": null,
+      "birthday": "01-19",
+      "marked": false,
+      "notes": ""
+    },
+    {
+      "id": "joanna-dragsdal",
+      "name": "Joanna Dragsdal",
+      "group": "venner",
+      "relation": null,
+      "birthday": "08-08",
+      "marked": true,
+      "notes": ""
+    },
+    {
+      "id": "niels-peter-lindegaard",
+      "name": "Niels Peter Lindegaard",
+      "group": "venner",
+      "relation": null,
+      "birthday": "11-03",
+      "marked": false,
+      "notes": ""
+    },
+    {
+      "id": "borja-alonso",
+      "name": "Borja Alonso",
+      "group": "venner",
+      "relation": null,
+      "birthday": "05-23",
+      "marked": false,
+      "notes": ""
+    },
+    {
+      "id": "kalle-mickelborg",
+      "name": "Kalle Mickelborg",
+      "group": "venner",
+      "relation": null,
+      "birthday": "04-20",
+      "marked": false,
+      "notes": ""
+    },
+    {
+      "id": "ottilia-henningsson",
+      "name": "Ottilia Henningsson",
+      "group": "venner",
+      "relation": null,
+      "birthday": "03-06",
+      "marked": false,
+      "notes": ""
+    },
+    {
+      "id": "hannah-bhorat",
+      "name": "Hannah Bhorat",
+      "group": "venner",
+      "relation": null,
+      "birthday": "01-24",
+      "marked": true,
+      "notes": ""
+    },
+    {
+      "id": "caroline-rosmield",
+      "name": "Caroline Rosmield",
+      "group": "venner",
+      "relation": null,
+      "birthday": "03-29",
+      "marked": true,
+      "notes": ""
+    },
+    {
+      "id": "elle-edstroem",
+      "name": "Elle Edström",
+      "group": "venner",
+      "relation": null,
+      "birthday": "07-13",
+      "marked": false,
+      "notes": ""
+    },
+    {
+      "id": "marie-overgaard",
+      "name": "Marie Overgård",
+      "group": "venner",
+      "relation": null,
+      "birthday": "05-09",
+      "marked": false,
+      "notes": ""
+    },
+    {
+      "id": "ina-oegren",
+      "name": "Ina Ögren",
+      "group": "venner",
+      "relation": null,
+      "birthday": "12-31",
+      "marked": false,
+      "notes": ""
+    },
+    {
+      "id": "fatemeh-bak",
+      "name": "Fatemeh Bak",
+      "group": "venner",
+      "relation": null,
+      "birthday": "03-02",
+      "marked": true,
+      "notes": ""
+    },
+    {
+      "id": "stephanie-mikalsen",
+      "name": "Stephanie Mikalsen",
+      "group": "venner",
+      "relation": null,
+      "birthday": "01-27",
+      "marked": true,
+      "notes": ""
+    },
+    {
+      "id": "camilla-lindskou",
+      "name": "Camilla Lindskou",
+      "group": "venner",
+      "relation": null,
+      "birthday": "01-27",
+      "marked": true,
+      "notes": ""
+    },
+    {
+      "id": "ali",
+      "name": "Ali",
+      "group": "venner",
+      "relation": null,
+      "birthday": "04-12",
+      "marked": false,
+      "notes": ""
+    }
+  ]
+}
