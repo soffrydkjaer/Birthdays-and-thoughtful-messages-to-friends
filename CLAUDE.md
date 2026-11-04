@@ -14,6 +14,8 @@ kan kopiere og sende fra sin telefon (SMS, Messenger, WhatsApp osv.).
 - `data/state.json` — hvornår hver person sidst fik en besked og hvornår
   næste check-in er planlagt. Rediger ikke i hånden medmindre nødvendigt.
 - `data/messages.jsonl` — log over alle foreslåede beskeder.
+- `data/pending.json` — dagens beskeder/påmindelser, som ejeren endnu ikke
+  har bekræftet. `record` tilføjer, `done`/`snooze` fjerner.
 - `scripts/omsorg.py` — planlæggeren (se docstring).
 
 ## Daglig rutine (når agenten køres)
@@ -32,6 +34,17 @@ kan kopiere og sende fra sin telefon (SMS, Messenger, WhatsApp osv.).
 6. Send ejeren en push-notifikation med en kort opsummering
    (fx "🎂📞 Far har fødselsdag — ring · 💬 Skriv til Rikke · 📞 Ring til Anker")
    og beskederne, klar til at kopiere. Ingen notifikation hvis der intet er.
+
+Hvis `unconfirmed_from_earlier` ikke er tom, så nævn det kort øverst
+(fx "Du nåede ikke at bekræfte Eline i går — hun er med igen i dag").
+Ubekræftede check-ins kommer automatisk igen; ubekræftede fødselsdage droppes.
+
+## Påmindelser kl. 12 og 18
+1. `git pull`, og kør `python3 scripts/omsorg.py pending --date <dagens dato>`.
+2. Er listen tom: svar kun "Alt klaret 🌿" (ingen notifikation).
+3. Ellers: kort påmindelse om dem, der mangler, med beskederne igen, klar til
+   at kopiere, fx "⏰ Mangler stadig: 💬 Signe · 📞 Anker" — og slut med
+   "Svar 'sendt', 'har snakket med X', 'tag X i morgen' eller lignende."
 
 `birthdays_upcoming` (inden for 7 dage) nævnes i oversigten som et heads-up,
 især for familie (gave/opringning) — der skrives ikke besked til dem endnu.
@@ -102,11 +115,11 @@ så tilpas ud fra svaret:
 
 | Ejeren siger fx | Gør |
 |---|---|
-| "Sendt" / "Har skrevet til X" / "Ringede til Anker" | Intet ekstra — det er allerede registreret. Bekræft kort. |
-| "Sendte en anden besked: …" | `record <id> checkin "<den faktiske tekst>"`, så den ikke gentages. |
+| "Sendt" / "Har skrevet til X" / "Ringede til Anker" / "Godkendt" | `done <id>` (uden navn = alle på dagens liste). Bekræft kort. |
+| "Sendte en anden besked: …" | `record <id> checkin "<den faktiske tekst>"`, så den ikke gentages, og derefter `done <id>`. |
 | "Har lige snakket med X" / "Giver ikke mening, vi ses i weekenden" | Tæller som kontakt: `record <id> checkin "(snakket for nylig)"` → ny dato om 4-6 uger. |
 | "Nåede det ikke" / "Tag X i morgen" / "Om et par dage" | `snooze <id> <dage>` (i morgen = 1, et par dage = 3, næste uge = 7). |
-| "Skriv en anden besked til X" | Skriv et nyt udkast i samme tone, og `record` det. |
+| "Skriv en anden besked til X" | Skriv et nyt udkast i samme tone, og `record` det (det forbliver på ventelisten, til ejeren bekræfter). |
 | "Jeg har skrevet med X" (ikke på dagens liste) | `record <id> checkin "(skrevet selv)"`. |
 | "Ingen check-ins til X" / "Sæt X på pause" | `"checkin": false` eller `"paused": true` i contacts.json. |
 | Nyt om en person ("Rikke er lige startet på nyt job") | Tilføj til `notes` i contacts.json, så næste besked kan bruge det. |

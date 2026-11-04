@@ -10,6 +10,12 @@ Brug:
       Logger en foreslået/sendt besked og planlægger næste check-in
       om 4-6 uger (tilfældigt 28-42 dage).
 
+  python3 scripts/omsorg.py pending [--date YYYY-MM-DD]
+      Viser dagens ubekræftede beskeder/påmindelser (bruges kl. 12 og 18).
+
+  python3 scripts/omsorg.py done <id>
+      Markér at ejeren har rakt ud (fjerner fra ventelisten).
+
   python3 scripts/omsorg.py snooze <id> <dage> [--date YYYY-MM-DD]
       Flytter næste check-in/påmindelse til om <dage> dage.
 
@@ -29,6 +35,33 @@ ROOT = Path(__file__).resolve().parent.parent
 CONTACTS = ROOT / "data" / "contacts.json"
 STATE = ROOT / "data" / "state.json"
 LOG = ROOT / "data" / "messages.jsonl"
+PENDING = ROOT / "data" / "pending.json"
+NOT_PENDING = ("(skrevet selv)", "(snakket for nylig)")
+
+
+def load_pending():
+    return load_json(PENDING, [])
+
+
+def save_pending(items):
+    PENDING.write_text(json.dumps(items, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+
+
+def expire_pending(state, today):
+    """Ubekræftede check-ins fra tidligere dage kommer igen i dag.
+    Ubekræftede fødselsdage fra tidligere dage droppes (dagen er gået)."""
+    keep, expired = [], []
+    for it in load_pending():
+        if it["date"] >= today.isoformat():
+            keep.append(it)
+        else:
+            expired.append(it)
+            if it["type"] == "checkin" and it["id"] in state:
+                state[it["id"]]["next_checkin"] = it["date"]  # prioriteres som forsinket
+    if expired:
+        save_pending(keep)
+        save_state(state)
+    return expired
 
 MIN_DAYS, MAX_DAYS = 28, 42      # 4-6 uger mellem check-ins
 MAX_CHECKINS_PER_DAY = 2         # så det ikke bliver uoverskueligt
@@ -108,12 +141,14 @@ def last_messages(cid, n=3):
 
 def plan(today):
     state = load_json(STATE, {})
+    expired = expire_pending(state, today)
     if any(c["id"] not in state or (c.get("checkin") and not state[c["id"]].get("next_checkin"))
            for c in contacts()):
         init_state(state, today)
         save_state(state)
 
-    out = {"date": today.isoformat(), "birthdays_today": [], "birthdays_upcoming": [],
+    out = {"date": today.isoformat(), "unconfirmed_from_earlier": expired,
+           "birthdays_today": [], "birthdays_upcoming": [],
            "checkins_due": [], "checkins_postponed": []}
     due = []
     for c in contacts():
@@ -177,7 +212,19 @@ def record(cid, kind, text, today):
     with LOG.open("a", encoding="utf-8") as f:
         f.write(json.dumps({"date": today.isoformat(), "id": cid, "type": kind, "text": text},
                            ensure_ascii=False) + "\n")
+    pend = [i for i in load_pending() if not (i["id"] == cid and i["type"] == kind)]
+    if text not in NOT_PENDING:
+        pend.append({"date": today.isoformat(), "id": cid, "name": contact["name"],
+                     "type": kind, "contact_by": contact.get("contact_by", "besked"), "text": text})
+    save_pending(pend)
     print(json.dumps({"id": cid, **s}, ensure_ascii=False))
+
+
+def done(cid):
+    pend = load_pending()
+    rest = [i for i in pend if i["id"] != cid]
+    save_pending(rest)
+    print(json.dumps({"removed": len(pend) - len(rest), "still_pending": rest}, ensure_ascii=False))
 
 
 def snooze(cid, days, today):
@@ -186,12 +233,13 @@ def snooze(cid, days, today):
         raise SystemExit(f"Ukendt id: {cid}")
     state[cid]["next_checkin"] = (today + dt.timedelta(days=days)).isoformat()
     save_state(state)
+    save_pending([i for i in load_pending() if i["id"] != cid])
     print(json.dumps({"id": cid, **state[cid]}, ensure_ascii=False))
 
 
 def main():
     p = argparse.ArgumentParser()
-    p.add_argument("cmd", choices=["plan", "record", "init", "snooze"])
+    p.add_argument("cmd", choices=["plan", "record", "init", "snooze", "pending", "done"])
     p.add_argument("args", nargs="*")
     p.add_argument("--date")
     a = p.parse_args()
@@ -200,6 +248,13 @@ def main():
         print(json.dumps(plan(today), ensure_ascii=False, indent=2))
     elif a.cmd == "init":
         save_state(init_state(load_json(STATE, {}), today))
+    elif a.cmd == "pending":
+        print(json.dumps([i for i in load_pending() if i["date"] == today.isoformat()],
+                         ensure_ascii=False, indent=2))
+    elif a.cmd == "done":
+        if len(a.args) != 1:
+            raise SystemExit("Brug: done <id>")
+        done(a.args[0])
     elif a.cmd == "snooze":
         if len(a.args) != 2:
             raise SystemExit("Brug: snooze <id> <dage>")
