@@ -35,7 +35,7 @@ især for familie (gave/opringning) — der skrives ikke besked til dem endnu.
 ## Hvem får hvad
 - **Fødselsdagshilsen:** alle med en fødselsdag i `contacts.json`.
 - **Check-in (hver 4.-6. uge):** alle med `"checkin": true` — som standard
-  alle, både familie og venner. Sæt `"checkin": false` for at stoppe check-ins
+  alle kvinder i familie og vennekreds (ikke mænd). Sæt `"checkin": false` for at stoppe check-ins
   til en person (fødselsdagshilsen fortsætter).
 
 ## Sådan skal beskederne lyde

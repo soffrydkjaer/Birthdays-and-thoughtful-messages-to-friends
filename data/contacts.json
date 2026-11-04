@@ -19,7 +19,7 @@
       "birthday": "11-13",
       "marked": false,
       "notes": "",
-      "checkin": true,
+      "checkin": false,
       "checkin_greeting": null
     },
     {
@@ -41,7 +41,7 @@
       "birthday": "04-15",
       "marked": false,
       "notes": "",
-      "checkin": true,
+      "checkin": false,
       "checkin_greeting": null
     },
     {
@@ -52,7 +52,7 @@
       "birthday": null,
       "marked": false,
       "notes": "",
-      "checkin": true,
+      "checkin": false,
       "checkin_greeting": null
     },
     {
@@ -85,7 +85,7 @@
       "birthday": "01-22",
       "marked": false,
       "notes": "",
-      "checkin": true,
+      "checkin": false,
       "checkin_greeting": null
     },
     {
@@ -96,7 +96,7 @@
       "birthday": "10-09",
       "marked": false,
       "notes": "",
-      "checkin": true,
+      "checkin": false,
       "checkin_greeting": null
     },
     {
@@ -294,7 +294,7 @@
       "birthday": "11-03",
       "marked": false,
       "notes": "",
-      "checkin": true,
+      "checkin": false,
       "checkin_greeting": null
     },
     {
@@ -305,7 +305,7 @@
       "birthday": "05-23",
       "marked": false,
       "notes": "",
-      "checkin": true,
+      "checkin": false,
       "checkin_greeting": null
     },
     {
@@ -315,8 +315,8 @@
       "relation": null,
       "birthday": "04-20",
       "marked": false,
-      "notes": "Tjek: skal hilsen være 'Hej søde'?",
-      "checkin": true,
+      "notes": "",
+      "checkin": false,
       "checkin_greeting": null
     },
     {
@@ -425,9 +425,10 @@
       "relation": null,
       "birthday": "04-12",
       "marked": false,
-      "notes": "Tjek: skal hilsen være 'Hej søde'?",
-      "checkin": true,
-      "checkin_greeting": null
+      "notes": "Skriver ikke til Ali – ingen beskeder.",
+      "checkin": false,
+      "checkin_greeting": null,
+      "paused": true
     }
   ]
 }
