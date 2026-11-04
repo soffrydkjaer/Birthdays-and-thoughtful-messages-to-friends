@@ -8,8 +8,9 @@
       "birthday": "07-23",
       "marked": false,
       "notes": "",
-      "checkin": true,
-      "checkin_greeting": null
+      "checkin": false,
+      "checkin_greeting": null,
+      "contact_by": "opkald"
     },
     {
       "id": "far",
@@ -20,7 +21,8 @@
       "marked": false,
       "notes": "",
       "checkin": false,
-      "checkin_greeting": null
+      "checkin_greeting": null,
+      "contact_by": "opkald"
     },
     {
       "id": "alberte-niece",
@@ -30,8 +32,9 @@
       "birthday": "11-01",
       "marked": false,
       "notes": "",
-      "checkin": true,
-      "checkin_greeting": null
+      "checkin": false,
+      "checkin_greeting": null,
+      "contact_by": "opkald"
     },
     {
       "id": "karl",
@@ -42,7 +45,8 @@
       "marked": false,
       "notes": "",
       "checkin": false,
-      "checkin_greeting": null
+      "checkin_greeting": null,
+      "contact_by": "opkald"
     },
     {
       "id": "morfar",
@@ -53,7 +57,8 @@
       "marked": false,
       "notes": "",
       "checkin": false,
-      "checkin_greeting": null
+      "checkin_greeting": null,
+      "contact_by": "opkald"
     },
     {
       "id": "erna",
@@ -63,8 +68,9 @@
       "birthday": "01-02",
       "marked": false,
       "notes": "",
-      "checkin": true,
-      "checkin_greeting": null
+      "checkin": false,
+      "checkin_greeting": null,
+      "contact_by": "opkald"
     },
     {
       "id": "line",
@@ -74,8 +80,9 @@
       "birthday": "01-07",
       "marked": false,
       "notes": "",
-      "checkin": true,
-      "checkin_greeting": null
+      "checkin": false,
+      "checkin_greeting": null,
+      "contact_by": "opkald"
     },
     {
       "id": "anker",
@@ -85,8 +92,9 @@
       "birthday": "01-22",
       "marked": false,
       "notes": "",
-      "checkin": false,
-      "checkin_greeting": null
+      "checkin": true,
+      "checkin_greeting": null,
+      "contact_by": "opkald"
     },
     {
       "id": "markus",
@@ -96,8 +104,9 @@
       "birthday": "10-09",
       "marked": false,
       "notes": "",
-      "checkin": false,
-      "checkin_greeting": null
+      "checkin": true,
+      "checkin_greeting": null,
+      "contact_by": "opkald"
     },
     {
       "id": "rikke-jensen",
@@ -108,7 +117,8 @@
       "marked": true,
       "notes": "",
       "checkin": true,
-      "checkin_greeting": "Hej søde"
+      "checkin_greeting": "Hej søde",
+      "contact_by": "besked"
     },
     {
       "id": "jessica-ryvang",
@@ -119,7 +129,8 @@
       "marked": true,
       "notes": "",
       "checkin": true,
-      "checkin_greeting": "Hej søde"
+      "checkin_greeting": "Hej søde",
+      "contact_by": "besked"
     },
     {
       "id": "kathrine-oestergaard-inman",
@@ -130,7 +141,8 @@
       "marked": true,
       "notes": "",
       "checkin": true,
-      "checkin_greeting": "Hej søde"
+      "checkin_greeting": "Hej søde",
+      "contact_by": "besked"
     },
     {
       "id": "louise-gottlieb",
@@ -141,7 +153,8 @@
       "marked": true,
       "notes": "",
       "checkin": true,
-      "checkin_greeting": "Hej søde"
+      "checkin_greeting": "Hej søde",
+      "contact_by": "besked"
     },
     {
       "id": "christine-morild",
@@ -152,7 +165,8 @@
       "marked": true,
       "notes": "",
       "checkin": true,
-      "checkin_greeting": "Hej søde"
+      "checkin_greeting": "Hej søde",
+      "contact_by": "besked"
     },
     {
       "id": "nadja-kirkedal",
@@ -163,7 +177,8 @@
       "marked": false,
       "notes": "",
       "checkin": true,
-      "checkin_greeting": "Hej søde"
+      "checkin_greeting": "Hej søde",
+      "contact_by": "besked"
     },
     {
       "id": "pernille-jensen-larsen",
@@ -174,7 +189,8 @@
       "marked": false,
       "notes": "",
       "checkin": true,
-      "checkin_greeting": "Hej søde"
+      "checkin_greeting": "Hej søde",
+      "contact_by": "besked"
     },
     {
       "id": "alberte-frederiksen",
@@ -185,7 +201,8 @@
       "marked": false,
       "notes": "",
       "checkin": true,
-      "checkin_greeting": "Hej søde"
+      "checkin_greeting": "Hej søde",
+      "contact_by": "besked"
     },
     {
       "id": "signe-eriksen",
@@ -196,7 +213,8 @@
       "marked": true,
       "notes": "",
       "checkin": true,
-      "checkin_greeting": "Hej søde"
+      "checkin_greeting": "Hej søde",
+      "contact_by": "besked"
     },
     {
       "id": "camilla-maach",
@@ -207,7 +225,8 @@
       "marked": true,
       "notes": "",
       "checkin": true,
-      "checkin_greeting": "Hej søde"
+      "checkin_greeting": "Hej søde",
+      "contact_by": "besked"
     },
     {
       "id": "ane-andreasen",
@@ -218,7 +237,8 @@
       "marked": false,
       "notes": "",
       "checkin": true,
-      "checkin_greeting": "Hej søde"
+      "checkin_greeting": "Hej søde",
+      "contact_by": "besked"
     },
     {
       "id": "laura-topholt",
@@ -229,7 +249,8 @@
       "marked": false,
       "notes": "",
       "checkin": true,
-      "checkin_greeting": "Hej søde"
+      "checkin_greeting": "Hej søde",
+      "contact_by": "besked"
     },
     {
       "id": "emilie-luna-rasmussen",
@@ -240,7 +261,8 @@
       "marked": true,
       "notes": "",
       "checkin": true,
-      "checkin_greeting": "Hej søde"
+      "checkin_greeting": "Hej søde",
+      "contact_by": "besked"
     },
     {
       "id": "eline-gernow",
@@ -251,7 +273,8 @@
       "marked": true,
       "notes": "",
       "checkin": true,
-      "checkin_greeting": "Hej søde"
+      "checkin_greeting": "Hej søde",
+      "contact_by": "besked"
     },
     {
       "id": "julia-lamamy",
@@ -262,7 +285,8 @@
       "marked": false,
       "notes": "",
       "checkin": true,
-      "checkin_greeting": "Hej søde"
+      "checkin_greeting": "Hej søde",
+      "contact_by": "besked"
     },
     {
       "id": "emma-hassinggaard",
@@ -273,7 +297,8 @@
       "marked": false,
       "notes": "",
       "checkin": true,
-      "checkin_greeting": "Hej søde"
+      "checkin_greeting": "Hej søde",
+      "contact_by": "besked"
     },
     {
       "id": "joanna-dragsdal",
@@ -284,7 +309,8 @@
       "marked": true,
       "notes": "",
       "checkin": true,
-      "checkin_greeting": "Hej søde"
+      "checkin_greeting": "Hej søde",
+      "contact_by": "besked"
     },
     {
       "id": "niels-peter-lindegaard",
@@ -295,7 +321,8 @@
       "marked": false,
       "notes": "",
       "checkin": false,
-      "checkin_greeting": null
+      "checkin_greeting": null,
+      "contact_by": "besked"
     },
     {
       "id": "borja-alonso",
@@ -306,7 +333,8 @@
       "marked": false,
       "notes": "",
       "checkin": false,
-      "checkin_greeting": null
+      "checkin_greeting": null,
+      "contact_by": "besked"
     },
     {
       "id": "kalle-mickelborg",
@@ -317,7 +345,8 @@
       "marked": false,
       "notes": "",
       "checkin": false,
-      "checkin_greeting": null
+      "checkin_greeting": null,
+      "contact_by": "besked"
     },
     {
       "id": "ottilia-henningsson",
@@ -328,7 +357,8 @@
       "marked": false,
       "notes": "",
       "checkin": true,
-      "checkin_greeting": "Hej søde"
+      "checkin_greeting": "Hej søde",
+      "contact_by": "besked"
     },
     {
       "id": "hannah-bhorat",
@@ -339,7 +369,8 @@
       "marked": true,
       "notes": "",
       "checkin": true,
-      "checkin_greeting": "Hej søde"
+      "checkin_greeting": "Hej søde",
+      "contact_by": "besked"
     },
     {
       "id": "caroline-rosmield",
@@ -350,7 +381,8 @@
       "marked": true,
       "notes": "",
       "checkin": true,
-      "checkin_greeting": "Hej søde"
+      "checkin_greeting": "Hej søde",
+      "contact_by": "besked"
     },
     {
       "id": "elle-edstroem",
@@ -361,7 +393,8 @@
       "marked": false,
       "notes": "",
       "checkin": true,
-      "checkin_greeting": "Hej søde"
+      "checkin_greeting": "Hej søde",
+      "contact_by": "besked"
     },
     {
       "id": "marie-overgaard",
@@ -372,7 +405,8 @@
       "marked": false,
       "notes": "",
       "checkin": true,
-      "checkin_greeting": "Hej søde"
+      "checkin_greeting": "Hej søde",
+      "contact_by": "besked"
     },
     {
       "id": "ina-oegren",
@@ -383,7 +417,8 @@
       "marked": false,
       "notes": "",
       "checkin": true,
-      "checkin_greeting": "Hej søde"
+      "checkin_greeting": "Hej søde",
+      "contact_by": "besked"
     },
     {
       "id": "fatemeh-bak",
@@ -394,7 +429,8 @@
       "marked": true,
       "notes": "",
       "checkin": true,
-      "checkin_greeting": "Hej søde"
+      "checkin_greeting": "Hej søde",
+      "contact_by": "besked"
     },
     {
       "id": "stephanie-mikalsen",
@@ -405,7 +441,8 @@
       "marked": true,
       "notes": "",
       "checkin": true,
-      "checkin_greeting": "Hej søde"
+      "checkin_greeting": "Hej søde",
+      "contact_by": "besked"
     },
     {
       "id": "camilla-lindskou",
@@ -416,7 +453,8 @@
       "marked": true,
       "notes": "",
       "checkin": true,
-      "checkin_greeting": "Hej søde"
+      "checkin_greeting": "Hej søde",
+      "contact_by": "besked"
     },
     {
       "id": "ali",
@@ -428,7 +466,8 @@
       "notes": "Skriver ikke til Ali – ingen beskeder.",
       "checkin": false,
       "checkin_greeting": null,
-      "paused": true
+      "paused": true,
+      "contact_by": "besked"
     }
   ]
 }

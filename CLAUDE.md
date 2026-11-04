@@ -19,24 +19,33 @@ kan kopiere og sende fra sin telefon (SMS, Messenger, WhatsApp osv.).
 ## Daglig rutine (når agenten køres)
 1. `python3 scripts/omsorg.py plan` (dato i Europe/Copenhagen; giv
    `--date YYYY-MM-DD` hvis containerens dato kan afvige).
-2. For hver person i `birthdays_today`: skriv en fødselsdagshilsen.
-   For hver i `checkins_due`: skriv en check-in-besked.
+2. Se på `contact_by` for hver person:
+   - `"besked"`: skriv en fødselsdagshilsen (`birthdays_today`) eller en
+     check-in-besked (`checkins_due`).
+   - `"opkald"` (familien): skriv INGEN besked — kun en påmindelse, fx
+     "📞 Ring til Anker" eller "🎂📞 Mor har fødselsdag i dag — ring til hende".
+     Log den med teksten `"(påmindelse: ring)"`.
 3. Log hver besked: `python3 scripts/omsorg.py record <id> birthday|checkin "<tekst>"`.
    Det planlægger automatisk næste check-in om 28-42 dage.
 4. Skriv dagens oversigt til `daily/YYYY-MM-DD.md` (se format nedenfor).
 5. `git add -A && git commit -m "Dagens beskeder YYYY-MM-DD" && git push`.
 6. Send ejeren en push-notifikation med en kort opsummering
-   (fx "🎂 Far har fødselsdag i dag · 💬 Sig hej til Rikke og Anker")
+   (fx "🎂📞 Far har fødselsdag — ring · 💬 Skriv til Rikke · 📞 Ring til Anker")
    og beskederne, klar til at kopiere. Ingen notifikation hvis der intet er.
 
 `birthdays_upcoming` (inden for 7 dage) nævnes i oversigten som et heads-up,
 især for familie (gave/opringning) — der skrives ikke besked til dem endnu.
 
 ## Hvem får hvad
-- **Fødselsdagshilsen:** alle med en fødselsdag i `contacts.json`.
-- **Check-in (hver 4.-6. uge):** alle med `"checkin": true` — som standard
-  alle kvinder i familie og vennekreds (ikke mænd). Sæt `"checkin": false` for at stoppe check-ins
-  til en person (fødselsdagshilsen fortsætter).
+- **Venner (kvinder):** fødselsdagshilsen + check-in-besked hver 4.-6. uge.
+- **Venner (mænd: Niels Peter, Borja, Kalle):** kun fødselsdagshilsen.
+- **Ali:** ingenting (`paused`).
+- **Familie:** ingen beskeder — der ringes til dem. Kun påmindelse om at ringe
+  på deres fødselsdag.
+- **Anker og Markus (brødre):** derudover en påmindelse om at ringe hver 4.-6. uge.
+
+Styres i `contacts.json` med `checkin` (true/false), `contact_by`
+(`"besked"`/`"opkald"`) og `paused`.
 
 ## Sådan skal beskederne lyde
 - **Uformel tone, som når man skriver til en ven.** Ikke høfligt eller
@@ -44,9 +53,11 @@ især for familie (gave/opringning) — der skrives ikke besked til dem endnu.
   Gerne småt og hverdagsagtigt, som en sms.
 - På dansk, medmindre `notes` siger andet. Kort: 1-3 sætninger.
 - **Check-ins:** start med `checkin_greeting`, hvis den er sat (fx "Hej søde"),
-  efterfulgt af komma. Er den `null`, start fx med "Hej [fornavn]" eller "Heey".
+  efterfulgt af komma.
+- **Skriv ALDRIG personens navn i beskeden** — hverken i check-ins eller
+  fødselsdagshilsner.
 - **Fødselsdagshilsner:** brug ALDRIG "Hej søde". Start direkte med tillykke,
-  fx "Tillykke med dagen, [fornavn]!".
+  fx "Tillykke med dagen!".
 - **Aldrig samme besked to gange i træk til samme person.** Læs
   `recent_messages` og skift både formulering, åbning (efter hilsenen) og
   vinkel. `record` afviser en tekst, der er identisk med en af de to seneste.
@@ -64,10 +75,10 @@ især for familie (gave/opringning) — der skrives ikke besked til dem endnu.
 - Hej søde, har du haft en god uge? Fortæl mig lidt om hvad du går og laver
 
 ### Eksempler — fødselsdage
-- Tillykke med dagen, Rikke! 🎉 Håber du bliver fejret helt vildt i dag
+- Tillykke med dagen! 🎉 Håber du bliver fejret helt vildt i dag
 - Stort tillykke med fødselsdagen! Håber du får en dejlig dag med masser af kage og gode mennesker
-- Tillykke med de mange år, Louise! Du fortjener den bedste dag 🥳
-- Tillykke far! Håber du får en rigtig god dag. Kh
+- Tillykke med de mange år! Du fortjener den bedste dag 🥳
+- Kæmpe tillykke! Håber det bliver en fantastisk dag og et endnu bedre år
 - Tillykke med dagen! Glæder mig til at fejre dig næste gang vi ses 🎂
 
 ## Format for `daily/YYYY-MM-DD.md`

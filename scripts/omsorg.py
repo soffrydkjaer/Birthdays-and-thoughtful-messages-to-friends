@@ -120,6 +120,7 @@ def plan(today):
         info = {"id": c["id"], "name": c["name"], "group": c["group"],
                 "relation": c.get("relation"), "notes": c.get("notes", ""),
                 "checkin_greeting": c.get("checkin_greeting"),
+                "contact_by": c.get("contact_by", "besked"),
                 "recent_messages": last_messages(c["id"])}
         dtb = days_to_birthday(c, today)
         if dtb == 0:
@@ -154,7 +155,7 @@ def record(cid, kind, text, today):
     if cid not in ids:
         raise SystemExit(f"Ukendt id: {cid}")
     prev = last_messages(cid, 2)
-    if any(norm(r["text"]) == norm(text) for r in prev) and text != "(skrevet selv)":
+    if any(norm(r["text"]) == norm(text) for r in prev) and not text.startswith("("):
         raise SystemExit("Afvist: samme besked som en af de seneste til denne person. Skriv en ny.")
     contact = next(c for c in contacts() if c["id"] == cid)
     state = load_json(STATE, {})
