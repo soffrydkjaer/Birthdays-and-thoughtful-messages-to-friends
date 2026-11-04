@@ -13,8 +13,8 @@ Brug:
   python3 scripts/omsorg.py pending [--date YYYY-MM-DD]
       Viser dagens ubekræftede beskeder/påmindelser (bruges kl. 12 og 18).
 
-  python3 scripts/omsorg.py done <id>
-      Markér at ejeren har rakt ud (fjerner fra ventelisten).
+  python3 scripts/omsorg.py done [<id>]
+      Markér at ejeren har rakt ud (fjerner fra ventelisten; uden id = alle).
 
   python3 scripts/omsorg.py snooze <id> <dage> [--date YYYY-MM-DD]
       Flytter næste check-in/påmindelse til om <dage> dage.
@@ -222,7 +222,7 @@ def record(cid, kind, text, today):
 
 def done(cid):
     pend = load_pending()
-    rest = [i for i in pend if i["id"] != cid]
+    rest = [i for i in pend if cid is not None and i["id"] != cid]
     save_pending(rest)
     print(json.dumps({"removed": len(pend) - len(rest), "still_pending": rest}, ensure_ascii=False))
 
@@ -252,9 +252,9 @@ def main():
         print(json.dumps([i for i in load_pending() if i["date"] == today.isoformat()],
                          ensure_ascii=False, indent=2))
     elif a.cmd == "done":
-        if len(a.args) != 1:
-            raise SystemExit("Brug: done <id>")
-        done(a.args[0])
+        if len(a.args) > 1:
+            raise SystemExit("Brug: done [<id>]  (uden id = alle)")
+        done(a.args[0] if a.args else None)
     elif a.cmd == "snooze":
         if len(a.args) != 2:
             raise SystemExit("Brug: snooze <id> <dage>")
