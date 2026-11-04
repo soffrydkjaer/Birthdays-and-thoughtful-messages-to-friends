@@ -7,7 +7,9 @@
       "relation": "mor",
       "birthday": "07-23",
       "marked": false,
-      "notes": ""
+      "notes": "",
+      "checkin": false,
+      "checkin_greeting": null
     },
     {
       "id": "far",
@@ -16,7 +18,9 @@
       "relation": "far",
       "birthday": "11-13",
       "marked": false,
-      "notes": ""
+      "notes": "",
+      "checkin": false,
+      "checkin_greeting": null
     },
     {
       "id": "alberte-niece",
@@ -25,7 +29,9 @@
       "relation": "niece (Lines datter)",
       "birthday": "11-01",
       "marked": false,
-      "notes": ""
+      "notes": "",
+      "checkin": false,
+      "checkin_greeting": null
     },
     {
       "id": "karl",
@@ -34,7 +40,9 @@
       "relation": null,
       "birthday": "04-15",
       "marked": false,
-      "notes": ""
+      "notes": "",
+      "checkin": false,
+      "checkin_greeting": null
     },
     {
       "id": "morfar",
@@ -43,7 +51,9 @@
       "relation": "morfar",
       "birthday": null,
       "marked": false,
-      "notes": ""
+      "notes": "",
+      "checkin": false,
+      "checkin_greeting": null
     },
     {
       "id": "erna",
@@ -52,7 +62,9 @@
       "relation": null,
       "birthday": "01-02",
       "marked": false,
-      "notes": ""
+      "notes": "",
+      "checkin": false,
+      "checkin_greeting": null
     },
     {
       "id": "line",
@@ -61,7 +73,9 @@
       "relation": "søster",
       "birthday": "01-07",
       "marked": false,
-      "notes": ""
+      "notes": "",
+      "checkin": false,
+      "checkin_greeting": null
     },
     {
       "id": "anker",
@@ -70,7 +84,9 @@
       "relation": "bror",
       "birthday": "01-22",
       "marked": false,
-      "notes": ""
+      "notes": "",
+      "checkin": false,
+      "checkin_greeting": null
     },
     {
       "id": "markus",
@@ -79,7 +95,9 @@
       "relation": "bror",
       "birthday": "10-09",
       "marked": false,
-      "notes": ""
+      "notes": "",
+      "checkin": false,
+      "checkin_greeting": null
     },
     {
       "id": "rikke-jensen",
@@ -88,7 +106,9 @@
       "relation": null,
       "birthday": "02-28",
       "marked": true,
-      "notes": ""
+      "notes": "",
+      "checkin": true,
+      "checkin_greeting": "Hej søde"
     },
     {
       "id": "jessica-ryvang",
@@ -97,7 +117,9 @@
       "relation": null,
       "birthday": "10-09",
       "marked": true,
-      "notes": ""
+      "notes": "",
+      "checkin": true,
+      "checkin_greeting": "Hej søde"
     },
     {
       "id": "kathrine-oestergaard-inman",
@@ -106,7 +128,9 @@
       "relation": null,
       "birthday": "08-19",
       "marked": true,
-      "notes": ""
+      "notes": "",
+      "checkin": true,
+      "checkin_greeting": "Hej søde"
     },
     {
       "id": "louise-gottlieb",
@@ -115,7 +139,9 @@
       "relation": null,
       "birthday": "02-09",
       "marked": true,
-      "notes": ""
+      "notes": "",
+      "checkin": true,
+      "checkin_greeting": "Hej søde"
     },
     {
       "id": "christine-morild",
@@ -124,7 +150,9 @@
       "relation": null,
       "birthday": "09-24",
       "marked": true,
-      "notes": ""
+      "notes": "",
+      "checkin": true,
+      "checkin_greeting": "Hej søde"
     },
     {
       "id": "nadja-kirkedal",
@@ -133,7 +161,9 @@
       "relation": null,
       "birthday": "07-14",
       "marked": false,
-      "notes": ""
+      "notes": "",
+      "checkin": false,
+      "checkin_greeting": "Hej søde"
     },
     {
       "id": "pernille-jensen-larsen",
@@ -142,7 +172,9 @@
       "relation": null,
       "birthday": "08-08",
       "marked": false,
-      "notes": ""
+      "notes": "",
+      "checkin": false,
+      "checkin_greeting": "Hej søde"
     },
     {
       "id": "alberte-frederiksen",
@@ -151,7 +183,9 @@
       "relation": null,
       "birthday": "09-24",
       "marked": false,
-      "notes": ""
+      "notes": "",
+      "checkin": false,
+      "checkin_greeting": "Hej søde"
     },
     {
       "id": "signe-eriksen",
@@ -160,7 +194,9 @@
       "relation": null,
       "birthday": "03-08",
       "marked": true,
-      "notes": ""
+      "notes": "",
+      "checkin": true,
+      "checkin_greeting": "Hej søde"
     },
     {
       "id": "camilla-maach",
@@ -169,7 +205,9 @@
       "relation": null,
       "birthday": "04-03",
       "marked": true,
-      "notes": ""
+      "notes": "",
+      "checkin": true,
+      "checkin_greeting": "Hej søde"
     },
     {
       "id": "ane-andreasen",
@@ -178,7 +216,9 @@
       "relation": null,
       "birthday": "06-28",
       "marked": false,
-      "notes": ""
+      "notes": "",
+      "checkin": false,
+      "checkin_greeting": "Hej søde"
     },
     {
       "id": "laura-topholt",
@@ -187,7 +227,9 @@
       "relation": null,
       "birthday": "03-02",
       "marked": false,
-      "notes": ""
+      "notes": "",
+      "checkin": false,
+      "checkin_greeting": "Hej søde"
     },
     {
       "id": "emilie-luna-rasmussen",
@@ -196,7 +238,9 @@
       "relation": null,
       "birthday": "10-15",
       "marked": true,
-      "notes": ""
+      "notes": "",
+      "checkin": true,
+      "checkin_greeting": "Hej søde"
     },
     {
       "id": "eline-gernow",
@@ -205,7 +249,9 @@
       "relation": null,
       "birthday": "02-15",
       "marked": true,
-      "notes": ""
+      "notes": "",
+      "checkin": true,
+      "checkin_greeting": "Hej søde"
     },
     {
       "id": "julia-lamamy",
@@ -214,7 +260,9 @@
       "relation": null,
       "birthday": "10-18",
       "marked": false,
-      "notes": ""
+      "notes": "",
+      "checkin": false,
+      "checkin_greeting": "Hej søde"
     },
     {
       "id": "emma-hassinggaard",
@@ -223,7 +271,9 @@
       "relation": null,
       "birthday": "01-19",
       "marked": false,
-      "notes": ""
+      "notes": "",
+      "checkin": false,
+      "checkin_greeting": "Hej søde"
     },
     {
       "id": "joanna-dragsdal",
@@ -232,7 +282,9 @@
       "relation": null,
       "birthday": "08-08",
       "marked": true,
-      "notes": ""
+      "notes": "",
+      "checkin": true,
+      "checkin_greeting": "Hej søde"
     },
     {
       "id": "niels-peter-lindegaard",
@@ -241,7 +293,9 @@
       "relation": null,
       "birthday": "11-03",
       "marked": false,
-      "notes": ""
+      "notes": "",
+      "checkin": false,
+      "checkin_greeting": null
     },
     {
       "id": "borja-alonso",
@@ -250,7 +304,9 @@
       "relation": null,
       "birthday": "05-23",
       "marked": false,
-      "notes": ""
+      "notes": "",
+      "checkin": false,
+      "checkin_greeting": null
     },
     {
       "id": "kalle-mickelborg",
@@ -259,7 +315,9 @@
       "relation": null,
       "birthday": "04-20",
       "marked": false,
-      "notes": ""
+      "notes": "Tjek: skal hilsen være 'Hej søde'?",
+      "checkin": false,
+      "checkin_greeting": null
     },
     {
       "id": "ottilia-henningsson",
@@ -268,7 +326,9 @@
       "relation": null,
       "birthday": "03-06",
       "marked": false,
-      "notes": ""
+      "notes": "",
+      "checkin": false,
+      "checkin_greeting": "Hej søde"
     },
     {
       "id": "hannah-bhorat",
@@ -277,7 +337,9 @@
       "relation": null,
       "birthday": "01-24",
       "marked": true,
-      "notes": ""
+      "notes": "",
+      "checkin": true,
+      "checkin_greeting": "Hej søde"
     },
     {
       "id": "caroline-rosmield",
@@ -286,7 +348,9 @@
       "relation": null,
       "birthday": "03-29",
       "marked": true,
-      "notes": ""
+      "notes": "",
+      "checkin": true,
+      "checkin_greeting": "Hej søde"
     },
     {
       "id": "elle-edstroem",
@@ -295,7 +359,9 @@
       "relation": null,
       "birthday": "07-13",
       "marked": false,
-      "notes": ""
+      "notes": "",
+      "checkin": false,
+      "checkin_greeting": "Hej søde"
     },
     {
       "id": "marie-overgaard",
@@ -304,7 +370,9 @@
       "relation": null,
       "birthday": "05-09",
       "marked": false,
-      "notes": ""
+      "notes": "",
+      "checkin": false,
+      "checkin_greeting": "Hej søde"
     },
     {
       "id": "ina-oegren",
@@ -313,7 +381,9 @@
       "relation": null,
       "birthday": "12-31",
       "marked": false,
-      "notes": ""
+      "notes": "",
+      "checkin": false,
+      "checkin_greeting": "Hej søde"
     },
     {
       "id": "fatemeh-bak",
@@ -322,7 +392,9 @@
       "relation": null,
       "birthday": "03-02",
       "marked": true,
-      "notes": ""
+      "notes": "",
+      "checkin": true,
+      "checkin_greeting": "Hej søde"
     },
     {
       "id": "stephanie-mikalsen",
@@ -331,7 +403,9 @@
       "relation": null,
       "birthday": "01-27",
       "marked": true,
-      "notes": ""
+      "notes": "",
+      "checkin": true,
+      "checkin_greeting": "Hej søde"
     },
     {
       "id": "camilla-lindskou",
@@ -340,7 +414,9 @@
       "relation": null,
       "birthday": "01-27",
       "marked": true,
-      "notes": ""
+      "notes": "",
+      "checkin": true,
+      "checkin_greeting": "Hej søde"
     },
     {
       "id": "ali",
@@ -349,7 +425,9 @@
       "relation": null,
       "birthday": "04-12",
       "marked": false,
-      "notes": ""
+      "notes": "Tjek: skal hilsen være 'Hej søde'?",
+      "checkin": false,
+      "checkin_greeting": null
     }
   ]
 }

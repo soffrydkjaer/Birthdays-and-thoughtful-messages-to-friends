@@ -32,16 +32,42 @@ kan kopiere og sende fra sin telefon (SMS, Messenger, WhatsApp osv.).
 `birthdays_upcoming` (inden for 7 dage) nævnes i oversigten som et heads-up,
 især for familie (gave/opringning) — der skrives ikke besked til dem endnu.
 
+## Hvem får hvad
+- **Fødselsdagshilsen:** alle med en fødselsdag i `contacts.json`.
+- **Check-in (hver 4.-6. uge):** kun dem med `"checkin": true` (dem med (x)
+  i den oprindelige liste). Planlæggeren returnerer kun dem i `checkins_due`.
+
 ## Sådan skal beskederne lyde
-- På **dansk**, medmindre `notes` siger andet (fx svensk/engelsk for nogle venner).
-- Varm, personlig og kort (1-3 sætninger) — som en sms fra en ven, ikke et kort.
-- Brug fornavn. Variér formuleringerne; læs `recent_messages` og gentag ikke.
-- Brug `notes`, hvis der står noget, til at gøre beskeden konkret.
-- Check-ins skal variere mellem fx: "Hvordan har du det?", "Hvordan går det
-  med …?", "Jeg kom lige til at tænke på dig", et minde, et forslag om at ses.
-  Stil gerne et åbent spørgsmål, så det er let at svare.
-- Familie kan være lidt mere intim; mor/far gerne med et "kh" eller hjerte.
-- Max én emoji, og ikke altid.
+- **Uformel tone, som når man skriver til en ven.** Ikke høfligt eller
+  kort-agtigt — ingen "Kære …", "Jeg håber, du har det godt", "Med venlig hilsen".
+  Gerne småt og hverdagsagtigt, som en sms.
+- På dansk, medmindre `notes` siger andet. Kort: 1-3 sætninger.
+- **Check-ins:** start med `checkin_greeting`, hvis den er sat (fx "Hej søde"),
+  efterfulgt af komma. Er den `null`, start fx med "Hej [fornavn]" eller "Heey".
+- **Fødselsdagshilsner:** brug ALDRIG "Hej søde". Start direkte med tillykke,
+  fx "Tillykke med dagen, [fornavn]!".
+- **Aldrig samme besked to gange i træk til samme person.** Læs
+  `recent_messages` og skift både formulering, åbning (efter hilsenen) og
+  vinkel. `record` afviser en tekst, der er identisk med en af de to seneste.
+- Variér vinklen på check-ins: "hvordan har du det", "hvordan går det med …",
+  "kom til at tænke på dig", et minde, et forslag om at ses/ringe.
+  Slut gerne med et spørgsmål, så det er let at svare.
+- Max én emoji, og ikke i hver besked. Brug `notes` til at gøre det konkret.
+
+### Eksempler — check-ins
+- Hej søde, kom lige til at tænke på dig! Hvordan har du det for tiden? 💛
+- Hej søde, hvordan går det med dig? Føler det er alt for længe siden vi har snakket
+- Hej søde, jeg sad lige og tænkte på dig. Hvad sker der i dit liv for tiden?
+- Hej søde! Hvordan har du det? Skal vi ikke snart finde en dag og ses?
+- Hej søde, bare et lille hej herfra 🙂 Hvordan går det med alt?
+- Hej søde, har du haft en god uge? Fortæl mig lidt om hvad du går og laver
+
+### Eksempler — fødselsdage
+- Tillykke med dagen, Rikke! 🎉 Håber du bliver fejret helt vildt i dag
+- Stort tillykke med fødselsdagen! Håber du får en dejlig dag med masser af kage og gode mennesker
+- Tillykke med de mange år, Louise! Du fortjener den bedste dag 🥳
+- Tillykke far! Håber du får en rigtig god dag. Kh
+- Tillykke med dagen! Glæder mig til at fejre dig næste gang vi ses 🎂
 
 ## Format for `daily/YYYY-MM-DD.md`
 ```

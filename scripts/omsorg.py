@@ -82,13 +82,17 @@ def days_since_birthday(c, today):
 
 
 def init_state(state, today):
-    pending = [c for c in contacts() if c["id"] not in state]
+    pending = [c for c in contacts() if c["id"] not in state or
+               (c.get("checkin") and not state[c["id"]].get("next_checkin"))]
     random.Random(today.isoformat()).shuffle(pending)
     span = 35
+    for c in pending:
+        s = state.setdefault(c["id"], {"last_checkin": None, "last_birthday_greeting": None})
+        s["next_checkin"] = None
+    pending = [c for c in pending if c.get("checkin")]
     for i, c in enumerate(pending):
         offset = round(i * span / max(len(pending), 1))
-        state[c["id"]] = {"next_checkin": (today + dt.timedelta(days=offset)).isoformat(),
-                          "last_checkin": None, "last_birthday_greeting": None}
+        state[c["id"]]["next_checkin"] = (today + dt.timedelta(days=offset)).isoformat()
     return state
 
 
@@ -101,7 +105,8 @@ def last_messages(cid, n=3):
 
 def plan(today):
     state = load_json(STATE, {})
-    if any(c["id"] not in state for c in contacts()):
+    if any(c["id"] not in state or (c.get("checkin") and not state[c["id"]].get("next_checkin"))
+           for c in contacts()):
         init_state(state, today)
         save_state(state)
 
@@ -114,6 +119,7 @@ def plan(today):
         s = state[c["id"]]
         info = {"id": c["id"], "name": c["name"], "group": c["group"],
                 "relation": c.get("relation"), "notes": c.get("notes", ""),
+                "checkin_greeting": c.get("checkin_greeting"),
                 "recent_messages": last_messages(c["id"])}
         dtb = days_to_birthday(c, today)
         if dtb == 0:
@@ -122,6 +128,8 @@ def plan(today):
         elif dtb is not None and dtb <= UPCOMING_DAYS:
             out["birthdays_upcoming"].append({**info, "in_days": dtb,
                                               "date": next_birthday(c["birthday"], today).isoformat()})
+        if not c.get("checkin") or not s.get("next_checkin"):
+            continue
         nxt = dt.date.fromisoformat(s["next_checkin"])
         if nxt <= today:
             near_bday = (dtb is not None and dtb <= BIRTHDAY_QUIET_DAYS) or \
@@ -137,10 +145,18 @@ def plan(today):
     return out
 
 
+def norm(t):
+    return " ".join("".join(ch for ch in t.lower() if ch.isalnum() or ch.isspace()).split())
+
+
 def record(cid, kind, text, today):
     ids = {c["id"] for c in contacts()}
     if cid not in ids:
         raise SystemExit(f"Ukendt id: {cid}")
+    prev = last_messages(cid, 2)
+    if any(norm(r["text"]) == norm(text) for r in prev) and text != "(skrevet selv)":
+        raise SystemExit("Afvist: samme besked som en af de seneste til denne person. Skriv en ny.")
+    contact = next(c for c in contacts() if c["id"] == cid)
     state = load_json(STATE, {})
     if cid not in state:
         init_state(state, today)
@@ -148,7 +164,8 @@ def record(cid, kind, text, today):
     if kind == "birthday":
         s["last_birthday_greeting"] = today.isoformat()
         # en fødselsdagshilsen tæller også som kontakt
-        s["next_checkin"] = (today + dt.timedelta(days=random.randint(MIN_DAYS, MAX_DAYS))).isoformat()
+        if contact.get("checkin"):
+            s["next_checkin"] = (today + dt.timedelta(days=random.randint(MIN_DAYS, MAX_DAYS))).isoformat()
     else:
         s["last_checkin"] = today.isoformat()
         s["next_checkin"] = (today + dt.timedelta(days=random.randint(MIN_DAYS, MAX_DAYS))).isoformat()
