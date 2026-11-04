@@ -96,7 +96,21 @@ Styres i `contacts.json` med `checkin` (true/false), `contact_by`
 ```
 
 ## Når ejeren giver besked
-- "Jeg har skrevet med X" → `record <id> checkin "(skrevet selv)"`.
-- "Sæt X på pause" → `"paused": true` i contacts.json.
-- Nye personer/fødselsdage/noter → opdatér contacts.json (id = navn i
-  små bogstaver med bindestreger, æ→ae, ø→oe, å→aa).
+Ejeren svarer typisk i samme samtale som morgenens notifikation. Beskeden er
+allerede logget med `record` om morgenen (næste kontakt planlagt om 4-6 uger),
+så tilpas ud fra svaret:
+
+| Ejeren siger fx | Gør |
+|---|---|
+| "Sendt" / "Har skrevet til X" / "Ringede til Anker" | Intet ekstra — det er allerede registreret. Bekræft kort. |
+| "Sendte en anden besked: …" | `record <id> checkin "<den faktiske tekst>"`, så den ikke gentages. |
+| "Har lige snakket med X" / "Giver ikke mening, vi ses i weekenden" | Tæller som kontakt: `record <id> checkin "(snakket for nylig)"` → ny dato om 4-6 uger. |
+| "Nåede det ikke" / "Tag X i morgen" / "Om et par dage" | `snooze <id> <dage>` (i morgen = 1, et par dage = 3, næste uge = 7). |
+| "Skriv en anden besked til X" | Skriv et nyt udkast i samme tone, og `record` det. |
+| "Jeg har skrevet med X" (ikke på dagens liste) | `record <id> checkin "(skrevet selv)"`. |
+| "Ingen check-ins til X" / "Sæt X på pause" | `"checkin": false` eller `"paused": true` i contacts.json. |
+| Nyt om en person ("Rikke er lige startet på nyt job") | Tilføj til `notes` i contacts.json, så næste besked kan bruge det. |
+| Nye personer/fødselsdage | Opdatér contacts.json (id = navn i små bogstaver med bindestreger, æ→ae, ø→oe, å→aa). |
+
+Commit og push altid ændringer til `claude/festive-carson-60ha7k` bagefter,
+og svar kort, hvad der er ændret (fx "Klaret — Signe får næste besked omkring 10/12").

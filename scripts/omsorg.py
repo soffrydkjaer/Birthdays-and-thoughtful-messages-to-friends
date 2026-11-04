@@ -10,6 +10,9 @@ Brug:
       Logger en foreslået/sendt besked og planlægger næste check-in
       om 4-6 uger (tilfældigt 28-42 dage).
 
+  python3 scripts/omsorg.py snooze <id> <dage> [--date YYYY-MM-DD]
+      Flytter næste check-in/påmindelse til om <dage> dage.
+
   python3 scripts/omsorg.py init [--date YYYY-MM-DD]
       Fordeler første check-in for alle uden planlagt dato jævnt over
       de næste 5 uger (køres automatisk af plan, hvis nødvendigt).
@@ -177,9 +180,18 @@ def record(cid, kind, text, today):
     print(json.dumps({"id": cid, **s}, ensure_ascii=False))
 
 
+def snooze(cid, days, today):
+    state = load_json(STATE, {})
+    if cid not in state:
+        raise SystemExit(f"Ukendt id: {cid}")
+    state[cid]["next_checkin"] = (today + dt.timedelta(days=days)).isoformat()
+    save_state(state)
+    print(json.dumps({"id": cid, **state[cid]}, ensure_ascii=False))
+
+
 def main():
     p = argparse.ArgumentParser()
-    p.add_argument("cmd", choices=["plan", "record", "init"])
+    p.add_argument("cmd", choices=["plan", "record", "init", "snooze"])
     p.add_argument("args", nargs="*")
     p.add_argument("--date")
     a = p.parse_args()
@@ -188,6 +200,10 @@ def main():
         print(json.dumps(plan(today), ensure_ascii=False, indent=2))
     elif a.cmd == "init":
         save_state(init_state(load_json(STATE, {}), today))
+    elif a.cmd == "snooze":
+        if len(a.args) != 2:
+            raise SystemExit("Brug: snooze <id> <dage>")
+        snooze(a.args[0], int(a.args[1]), today)
     else:
         if len(a.args) != 3 or a.args[1] not in ("birthday", "checkin"):
             raise SystemExit('Brug: record <id> <birthday|checkin> "<tekst>"')
