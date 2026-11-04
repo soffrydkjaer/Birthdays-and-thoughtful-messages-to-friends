@@ -34,8 +34,9 @@ især for familie (gave/opringning) — der skrives ikke besked til dem endnu.
 
 ## Hvem får hvad
 - **Fødselsdagshilsen:** alle med en fødselsdag i `contacts.json`.
-- **Check-in (hver 4.-6. uge):** kun dem med `"checkin": true` (dem med (x)
-  i den oprindelige liste). Planlæggeren returnerer kun dem i `checkins_due`.
+- **Check-in (hver 4.-6. uge):** alle med `"checkin": true` — som standard
+  alle, både familie og venner. Sæt `"checkin": false` for at stoppe check-ins
+  til en person (fødselsdagshilsen fortsætter).
 
 ## Sådan skal beskederne lyde
 - **Uformel tone, som når man skriver til en ven.** Ikke høfligt eller

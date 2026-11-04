@@ -8,7 +8,7 @@
       "birthday": "07-23",
       "marked": false,
       "notes": "",
-      "checkin": false,
+      "checkin": true,
       "checkin_greeting": null
     },
     {
@@ -19,7 +19,7 @@
       "birthday": "11-13",
       "marked": false,
       "notes": "",
-      "checkin": false,
+      "checkin": true,
       "checkin_greeting": null
     },
     {
@@ -30,7 +30,7 @@
       "birthday": "11-01",
       "marked": false,
       "notes": "",
-      "checkin": false,
+      "checkin": true,
       "checkin_greeting": null
     },
     {
@@ -41,7 +41,7 @@
       "birthday": "04-15",
       "marked": false,
       "notes": "",
-      "checkin": false,
+      "checkin": true,
       "checkin_greeting": null
     },
     {
@@ -52,7 +52,7 @@
       "birthday": null,
       "marked": false,
       "notes": "",
-      "checkin": false,
+      "checkin": true,
       "checkin_greeting": null
     },
     {
@@ -63,7 +63,7 @@
       "birthday": "01-02",
       "marked": false,
       "notes": "",
-      "checkin": false,
+      "checkin": true,
       "checkin_greeting": null
     },
     {
@@ -74,7 +74,7 @@
       "birthday": "01-07",
       "marked": false,
       "notes": "",
-      "checkin": false,
+      "checkin": true,
       "checkin_greeting": null
     },
     {
@@ -85,7 +85,7 @@
       "birthday": "01-22",
       "marked": false,
       "notes": "",
-      "checkin": false,
+      "checkin": true,
       "checkin_greeting": null
     },
     {
@@ -96,7 +96,7 @@
       "birthday": "10-09",
       "marked": false,
       "notes": "",
-      "checkin": false,
+      "checkin": true,
       "checkin_greeting": null
     },
     {
@@ -162,7 +162,7 @@
       "birthday": "07-14",
       "marked": false,
       "notes": "",
-      "checkin": false,
+      "checkin": true,
       "checkin_greeting": "Hej søde"
     },
     {
@@ -173,7 +173,7 @@
       "birthday": "08-08",
       "marked": false,
       "notes": "",
-      "checkin": false,
+      "checkin": true,
       "checkin_greeting": "Hej søde"
     },
     {
@@ -184,7 +184,7 @@
       "birthday": "09-24",
       "marked": false,
       "notes": "",
-      "checkin": false,
+      "checkin": true,
       "checkin_greeting": "Hej søde"
     },
     {
@@ -217,7 +217,7 @@
       "birthday": "06-28",
       "marked": false,
       "notes": "",
-      "checkin": false,
+      "checkin": true,
       "checkin_greeting": "Hej søde"
     },
     {
@@ -228,7 +228,7 @@
       "birthday": "03-02",
       "marked": false,
       "notes": "",
-      "checkin": false,
+      "checkin": true,
       "checkin_greeting": "Hej søde"
     },
     {
@@ -261,7 +261,7 @@
       "birthday": "10-18",
       "marked": false,
       "notes": "",
-      "checkin": false,
+      "checkin": true,
       "checkin_greeting": "Hej søde"
     },
     {
@@ -272,7 +272,7 @@
       "birthday": "01-19",
       "marked": false,
       "notes": "",
-      "checkin": false,
+      "checkin": true,
       "checkin_greeting": "Hej søde"
     },
     {
@@ -294,7 +294,7 @@
       "birthday": "11-03",
       "marked": false,
       "notes": "",
-      "checkin": false,
+      "checkin": true,
       "checkin_greeting": null
     },
     {
@@ -305,7 +305,7 @@
       "birthday": "05-23",
       "marked": false,
       "notes": "",
-      "checkin": false,
+      "checkin": true,
       "checkin_greeting": null
     },
     {
@@ -316,7 +316,7 @@
       "birthday": "04-20",
       "marked": false,
       "notes": "Tjek: skal hilsen være 'Hej søde'?",
-      "checkin": false,
+      "checkin": true,
       "checkin_greeting": null
     },
     {
@@ -327,7 +327,7 @@
       "birthday": "03-06",
       "marked": false,
       "notes": "",
-      "checkin": false,
+      "checkin": true,
       "checkin_greeting": "Hej søde"
     },
     {
@@ -360,7 +360,7 @@
       "birthday": "07-13",
       "marked": false,
       "notes": "",
-      "checkin": false,
+      "checkin": true,
       "checkin_greeting": "Hej søde"
     },
     {
@@ -371,7 +371,7 @@
       "birthday": "05-09",
       "marked": false,
       "notes": "",
-      "checkin": false,
+      "checkin": true,
       "checkin_greeting": "Hej søde"
     },
     {
@@ -382,7 +382,7 @@
       "birthday": "12-31",
       "marked": false,
       "notes": "",
-      "checkin": false,
+      "checkin": true,
       "checkin_greeting": "Hej søde"
     },
     {
@@ -426,7 +426,7 @@
       "birthday": "04-12",
       "marked": false,
       "notes": "Tjek: skal hilsen være 'Hej søde'?",
-      "checkin": false,
+      "checkin": true,
       "checkin_greeting": null
     }
   ]
