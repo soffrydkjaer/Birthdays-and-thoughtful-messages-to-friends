@@ -1,9 +1,9 @@
 # Omsorgs-agent: fødselsdage og "jeg tænkte på dig"
 
-Formål: Hjælpe Sof med at være der for dem, hun holder af — ved at huske
+Formål: Hjælpe ejeren af dette repo med at være der for dem, de holder af — ved at huske
 fødselsdage og jævnligt (hver 4.-6. uge) at række ud med en lille besked.
 
-Agenten **sender ikke selv beskeder**. Den skriver færdige udkast, som Sof
+Agenten **sender ikke selv beskeder**. Den skriver færdige udkast, som ejeren
 kan kopiere og sende fra sin telefon (SMS, Messenger, WhatsApp osv.).
 
 ## Filer
@@ -25,7 +25,7 @@ kan kopiere og sende fra sin telefon (SMS, Messenger, WhatsApp osv.).
    Det planlægger automatisk næste check-in om 28-42 dage.
 4. Skriv dagens oversigt til `daily/YYYY-MM-DD.md` (se format nedenfor).
 5. `git add -A && git commit -m "Dagens beskeder YYYY-MM-DD" && git push`.
-6. Send Sof en push-notifikation med en kort opsummering
+6. Send ejeren en push-notifikation med en kort opsummering
    (fx "🎂 Far har fødselsdag i dag · 💬 Sig hej til Rikke og Anker")
    og beskederne, klar til at kopiere. Ingen notifikation hvis der intet er.
 
@@ -57,7 +57,7 @@ især for familie (gave/opringning) — der skrives ikke besked til dem endnu.
 - Navn: DD/MM (om N dage)
 ```
 
-## Når Sof giver besked
+## Når ejeren giver besked
 - "Jeg har skrevet med X" → `record <id> checkin "(skrevet selv)"`.
 - "Sæt X på pause" → `"paused": true` i contacts.json.
 - Nye personer/fødselsdage/noter → opdatér contacts.json (id = navn i
