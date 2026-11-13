@@ -455,19 +455,6 @@
       "checkin": true,
       "checkin_greeting": "Hej søde",
       "contact_by": "besked"
-    },
-    {
-      "id": "ali",
-      "name": "Ali",
-      "group": "venner",
-      "relation": null,
-      "birthday": "04-12",
-      "marked": false,
-      "notes": "Skriver ikke til Ali – ingen beskeder.",
-      "checkin": false,
-      "checkin_greeting": null,
-      "paused": true,
-      "contact_by": "besked"
     }
   ]
 }

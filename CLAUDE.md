@@ -3,6 +3,11 @@
 Formål: Hjælpe ejeren af dette repo med at være der for dem, de holder af — ved at huske
 fødselsdage og jævnligt (hver 4.-6. uge) at række ud med en lille besked.
 
+**Hvornår:** Fødselsdage tages på selve dagen. Check-ins og opkaldspåmindelser
+(brødrene) kommer **kun om søndagen** — `plan` returnerer tom `checkins_due`
+på alle andre dage (se `next_checkin_day`). Op til 6 check-ins pr. søndag;
+resten rykker til næste søndag.
+
 Agenten **sender ikke selv beskeder**. Den skriver færdige udkast, som ejeren
 kan kopiere og sende fra sin telefon (SMS, Messenger, WhatsApp osv.).
 
@@ -36,7 +41,9 @@ kan kopiere og sende fra sin telefon (SMS, Messenger, WhatsApp osv.).
    og beskederne, klar til at kopiere. Ingen notifikation hvis der intet er.
 
 Hvis `unconfirmed_from_earlier` ikke er tom, så nævn det kort øverst
-(fx "Du nåede ikke at bekræfte Eline i går — hun er med igen i dag").
+(fx "Du nåede ikke at skrive til Eline i søndags — hun kommer igen på søndag").
+Nævn ikke `checkins_waiting_for_sunday` i hverdagene; er der ingen fødselsdage,
+er svaret bare "Intet i dag 🌿".
 Ubekræftede check-ins kommer automatisk igen; ubekræftede fødselsdage droppes.
 
 ## Påmindelser kl. 12 og 18
@@ -52,7 +59,6 @@ især for familie (gave/opringning) — der skrives ikke besked til dem endnu.
 ## Hvem får hvad
 - **Venner (kvinder):** fødselsdagshilsen + check-in-besked hver 4.-6. uge.
 - **Venner (mænd: Niels Peter, Borja, Kalle):** kun fødselsdagshilsen.
-- **Ali:** ingenting (`paused`).
 - **Familie:** ingen beskeder — der ringes til dem. Kun påmindelse om at ringe
   på deres fødselsdag.
 - **Anker og Markus (brødre):** derudover en påmindelse om at ringe hver 4.-6. uge.
@@ -118,7 +124,7 @@ så tilpas ud fra svaret:
 | "Sendt" / "Har skrevet til X" / "Ringede til Anker" / "Godkendt" | `done <id>` (uden navn = alle på dagens liste). Bekræft kort. |
 | "Sendte en anden besked: …" | `record <id> checkin "<den faktiske tekst>"`, så den ikke gentages, og derefter `done <id>`. |
 | "Har lige snakket med X" / "Giver ikke mening, vi ses i weekenden" | Tæller som kontakt: `record <id> checkin "(snakket for nylig)"` → ny dato om 4-6 uger. |
-| "Nåede det ikke" / "Tag X i morgen" / "Om et par dage" | `snooze <id> <dage>` (i morgen = 1, et par dage = 3, næste uge = 7). |
+| "Nåede det ikke" / "Tag X i morgen" / "Om et par dage" | `snooze <id> <dage>` (i morgen = 1, et par dage = 3, næste uge = 7). Check-ins dukker først op igen den førstkommende søndag derefter — sig det i svaret. |
 | "Skriv en anden besked til X" | Skriv et nyt udkast i samme tone, og `record` det (det forbliver på ventelisten, til ejeren bekræfter). |
 | "Jeg har skrevet med X" (ikke på dagens liste) | `record <id> checkin "(skrevet selv)"`. |
 | "Ingen check-ins til X" / "Sæt X på pause" | `"checkin": false` eller `"paused": true` i contacts.json. |

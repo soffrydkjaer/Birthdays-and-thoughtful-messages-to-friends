@@ -4,7 +4,9 @@
 Brug:
   python3 scripts/omsorg.py plan [--date YYYY-MM-DD]
       Udskriver (JSON) dagens fødselsdage, kommende fødselsdage og
-      hvem der står for tur til en check-in-besked.
+      hvem der står for tur til en check-in-besked. Check-ins (og
+      opkaldspåmindelser til brødrene) kommer kun om søndagen;
+      fødselsdage kommer på selve dagen.
 
   python3 scripts/omsorg.py record <id> <birthday|checkin> "<beskedtekst>" [--date YYYY-MM-DD]
       Logger en foreslået/sendt besked og planlægger næste check-in
@@ -64,7 +66,8 @@ def expire_pending(state, today):
     return expired
 
 MIN_DAYS, MAX_DAYS = 28, 42      # 4-6 uger mellem check-ins
-MAX_CHECKINS_PER_DAY = 2         # så det ikke bliver uoverskueligt
+CHECKIN_WEEKDAY = 6              # check-ins/opkald kun om søndagen (mandag=0)
+MAX_CHECKINS_PER_DAY = 6         # pr. søndag, så det ikke bliver uoverskueligt
 UPCOMING_DAYS = 7                # varsel om kommende fødselsdage
 BIRTHDAY_QUIET_DAYS = 10         # ingen check-in tæt på fødselsdag
 
@@ -178,6 +181,12 @@ def plan(today):
                                                   "reason": "tæt på fødselsdag"})
             else:
                 due.append(((today - nxt).days, info))
+    if today.weekday() != CHECKIN_WEEKDAY:
+        # fødselsdage tages på dagen, men check-ins/opkald samles til søndag
+        days = (CHECKIN_WEEKDAY - today.weekday()) % 7
+        out["next_checkin_day"] = (today + dt.timedelta(days=days)).isoformat()
+        out["checkins_waiting_for_sunday"] = len(due) + len(out["checkins_postponed"])
+        due, out["checkins_postponed"] = [], []
     due.sort(key=lambda x: -x[0])
     out["checkins_due"] = [{**i, "days_overdue": d} for d, i in due[:MAX_CHECKINS_PER_DAY]]
     out["birthdays_upcoming"].sort(key=lambda x: x["in_days"])
