@@ -101,9 +101,9 @@
       "name": "Thilde",
       "group": "familie",
       "relation": "Ankers kæreste",
-      "birthday": null,
+      "birthday": "11-18",
       "marked": false,
-      "notes": "Ankers kæreste. Fødselsdag ukendt endnu.",
+      "notes": "Ankers kæreste.",
       "checkin": false,
       "checkin_greeting": null,
       "contact_by": "besked"
