@@ -97,6 +97,18 @@
       "contact_by": "opkald"
     },
     {
+      "id": "thilde",
+      "name": "Thilde",
+      "group": "familie",
+      "relation": "Ankers kæreste",
+      "birthday": null,
+      "marked": false,
+      "notes": "Ankers kæreste. Fødselsdag ukendt endnu.",
+      "checkin": false,
+      "checkin_greeting": null,
+      "contact_by": "besked"
+    },
+    {
       "id": "markus",
       "name": "Markus",
       "group": "familie",

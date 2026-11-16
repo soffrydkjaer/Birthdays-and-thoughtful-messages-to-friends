@@ -188,5 +188,10 @@
     "last_birthday_greeting": null,
     "last_checkin": null,
     "next_checkin": "2026-11-30"
+  },
+  "thilde": {
+    "last_birthday_greeting": null,
+    "last_checkin": null,
+    "next_checkin": null
   }
 }
